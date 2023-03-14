@@ -1,0 +1,45 @@
+﻿@page
+@model OrderToFood.Pages.Resturants.ListModel
+@{
+}
+<h1>Resturants</h1>
+
+<form method="GET">
+	<div class="form-group">
+		<div class="input-group">
+			<input type = "search" class="form-control" asp-for="SearchTerm"/>
+			<span class="input-group-btn">
+				<button class="btn btn-success">
+					Search
+				</button>
+			</span>
+		</div>
+	</div>
+</form>
+
+<table class="table">
+	<tr>
+		<td><b>Name</b></td>
+		<td><b>Loaction</b></td>
+		<td><b>Cusine Type</b></td>
+		<td>Actions</td>
+	</tr>
+	
+		@foreach (var res in Model.resturants)
+		{
+			<tr>
+			<td>@res.Name</td>
+			<td>@res.Location</td>
+			<td>@res.CusineType</td>
+			<td>
+				<a class="btn btn-outline-success" asp-page="./Detail" asp-route-resturantId="@res.Id">Detail</a>
+				<a class="btn btn-outline-primary" asp-page="./Edit" asp-route-resturantId="@res.Id">Edit</a>
+			</td>
+			</tr>
+		}
+	
+</table>
+
+<a asp-page="./Edit" class="btn btn-primary">Create new Resturant</a>
+
+@Model.message

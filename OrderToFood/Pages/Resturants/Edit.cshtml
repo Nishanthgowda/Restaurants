@@ -1,0 +1,28 @@
+﻿@page "{resturantId:int?}"
+@model OrderToFood.Pages.Resturants.EditModel
+@{
+}
+<h2>Editing for @Model.resturant.Name</h2>
+<form method="post">
+	<input type="hidden" asp-for="@Model.resturant.Id"/>
+	<div class="form-group">
+		<label asp-for="@Model.resturant.Name"></label>
+		<input asp-for="@Model.resturant.Name"/>
+		<span class="text-danger" asp-validation-for="@Model.resturant.Name"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="@Model.resturant.Location"></label>
+		<input asp-for="@Model.resturant.Location"/>
+		<span class="text-danger" asp-validation-for="@Model.resturant.Location"></span>
+	</div>
+	<div class="form-group">
+		<label asp-for="@Model.resturant.CusineType"></label>
+		<select asp-for="@Model.resturant.CusineType" asp-items="@Model.Cuisines">
+			<span class="text-danger" asp-validation-for="@Model.resturant.CusineType"></span>
+
+		</select>
+	</div>
+	<button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+<a asp-page="./List" class="btn btn-primary">Back</a>
