@@ -10,6 +10,10 @@ namespace Resturant.Data
 {
     public class OdeToFoodDbContext:DbContext
     {
+        public OdeToFoodDbContext(DbContextOptions<OdeToFoodDbContext> options):base(options)
+        {
+
+        }
         public DbSet<ResturantsHotel> Resturants { get; set; }
     }
 }
