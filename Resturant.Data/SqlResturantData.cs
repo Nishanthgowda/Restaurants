@@ -58,5 +58,10 @@ namespace Resturant.Data
             commit();
             return updatedRes;
         }
+
+        public int getResturantCount()
+        {
+            return db.Resturants.Count();
+        }
     }
 }

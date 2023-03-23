@@ -22,24 +22,19 @@
 		<td><b>Name</b></td>
 		<td><b>Loaction</b></td>
 		<td><b>Cusine Type</b></td>
-		<td>Actions</td>
+		<td><b>Actions</b></td>
 	</tr>
 	
 		@foreach (var res in Model.resturants)
 		{
-			<tr>
-			<td>@res.Name</td>
-			<td>@res.Location</td>
-			<td>@res.CusineType</td>
-			<td>
-				<a class="btn btn-outline-success" asp-page="./Detail" asp-route-resturantId="@res.Id">Detail</a>
-				<a class="btn btn-outline-primary" asp-page="./Edit" asp-route-resturantId="@res.Id">Edit</a>
-			</td>
-			</tr>
+			<partial name="_Summary" model="res" />
 		}
 	
 </table>
 
 <a asp-page="./Edit" class="btn btn-primary">Create new Resturant</a>
 
-@Model.message
+@section footer
+{
+	@Model.message
+}

@@ -17,5 +17,6 @@ namespace Resturant.Data
         ResturantsHotel Create(ResturantsHotel resturantsHotel);
         ResturantsHotel Delete(int resturantId);
         int commit();
+        int getResturantCount();
     }
 }

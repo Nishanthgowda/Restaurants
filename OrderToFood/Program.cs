@@ -11,7 +11,9 @@ var connectionString = config.GetConnectionString("OdeToFoodDb");
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddSingleton<IResturantData,InMemoryData>();
+//builder.Services.AddSingleton<IResturantData,InMemoryData>();
+
+builder.Services.AddScoped<IResturantData, SqlResturantData>();
 builder.Services.AddDbContextPool<OdeToFoodDbContext>(options => options.UseSqlServer(connectionString));
 var app = builder.Build();
 

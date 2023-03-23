@@ -1,0 +1,12 @@
+﻿@page "{resturantId:int}"
+@model OrderToFood.Pages.Resturants.DeleteModel
+@{
+	
+}
+<div class="alert alert-danger">
+	Are you sure to delete @Model.Resturant.Name
+	<form method="post">
+		<button type="submit" class="btn btn-danger" asp-route-resturantId="@Model.Resturant.Id">Yes!</button>
+		<a class="btn btn-secondary" asp-page="List">Cancel</a>
+	</form>
+</div>

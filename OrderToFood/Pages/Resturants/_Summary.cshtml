@@ -1,0 +1,15 @@
+﻿@using Resturant.Core
+@model ResturantsHotel
+
+<table class="table" style="border:1px solid black">
+	<tr>
+			<td>@Model.Name</td>
+			<td>@Model.Location</td>
+			<td>@Model.CusineType</td>
+			<td>
+				<a class="btn btn-outline-success" asp-page="./Detail" asp-route-resturantId="@Model.Id">Detail</a>
+				<a class="btn btn-outline-primary" asp-page="./Edit" asp-route-resturantId="@Model.Id">Edit</a>
+				<a class="btn btn-outline-danger" asp-page="./Delete" asp-route-resturantId="@Model.Id">Delete</a>
+			</td>
+			</tr>
+</table>
